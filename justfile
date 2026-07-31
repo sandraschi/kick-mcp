@@ -1,4 +1,8 @@
-﻿# Open the interactive recipe dashboard in the browser
+set windows-shell := ["powershell.exe", "-NoProfile", "-Command"]
+
+# Open the interactive recipe dashboard in the browser
+import 'scripts/just/fleet.just'
+# Open the interactive recipe dashboard in the browser
 default:
     @just --list
 
@@ -8,13 +12,13 @@ sync:
 
 # Lint all Python files
 lint:
-    ruff check src/
-    ruff format --check src/
+    uv run ruff check src/
+    uv run ruff format --check src/
 
 # Auto-fix lint issues
 fix:
-    ruff check --fix src/
-    ruff format src/
+    uv run ruff check --fix src/
+    uv run ruff format src/
 
 # Run MCP server in stdio mode
 stdio:
@@ -32,3 +36,8 @@ test:
 vendor:
     uv sync --upgrade
 
+# Bootstrap: install dev deps + pre-commit hook
+bootstrap:
+    uv sync --group dev
+    uv run pre-commit install
+    Write-Host "Pre-commit hooks installed." -ForegroundColor Green
