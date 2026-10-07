@@ -1,0 +1,14 @@
+{
+    "product_name": "Kick MCP",
+    "install_dir": "%LOCALAPPDATA%\\Kick MCP",
+    "operator_exe": "kick-mcp-native.exe",
+    "backend_process_names": ["kick-mcp-native", "kick-mcp-backend"],
+    "backend_port": 10700,
+    "health_path": "/api/v1/health",
+    "diagnostics_path": "/api/v1/diagnostics",
+    "feature_smoke_path": "/api/v1/system/info",
+    "window_title_re": "Kick MCP",
+    "nsis_glob": "native/target/release/bundle/nsis/Kick MCP_*_x64-setup.exe",
+    "bridge_ok_text": "REST bridge reachable",
+    "uninstall_registry_filter": "*Kick MCP*"
+}

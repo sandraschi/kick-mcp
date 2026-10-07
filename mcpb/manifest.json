@@ -1,0 +1,44 @@
+{
+  "manifest_version": "0.2",
+  "name": "kick-mcp",
+  "version": "0.1.0",
+  "description": "MCP server wrapping the Kick.com streaming platform API",
+  "author": { "name": "Sandra Schipal" },
+  "server": {
+    "type": "python",
+    "entry_point": "src/kick_mcp/__main__.py",
+    "mcp_config": {
+      "command": "uv",
+      "args": ["run","--directory","${PWD}","python","-m","kick_mcp"],
+      "env": {
+        "PYTHONPATH": "${PWD}/src",
+        "PYTHONUNBUFFERED": "1"
+      }
+    }
+  },
+  "tools": [
+    { "name": "main", "description": "main" },
+    { "name": "get_api_summary", "description": "get_api_summary" },
+    { "name": "kick_get_categories", "description": "kick_get_categories" },
+    { "name": "kick_get_category", "description": "kick_get_category" },
+    { "name": "kick_get_channels", "description": "kick_get_channels" },
+    { "name": "kick_update_channel", "description": "kick_update_channel" },
+    { "name": "kick_get_stream_key", "description": "kick_get_stream_key" },
+    { "name": "kick_send_chat_message", "description": "kick_send_chat_message" },
+    { "name": "kick_delete_chat_message", "description": "kick_delete_chat_message" },
+    { "name": "kick_get_event_subscriptions", "description": "kick_get_event_subscriptions" },
+    { "name": "kick_get_leaderboard", "description": "kick_get_leaderboard" },
+    { "name": "kick_get_livestreams", "description": "kick_get_livestreams" },
+    { "name": "kick_get_livestream_stats", "description": "kick_get_livestream_stats" },
+    { "name": "kick_ban_user", "description": "kick_ban_user" },
+    { "name": "kick_unban_user", "description": "kick_unban_user" },
+    { "name": "kick_get_channel_rewards", "description": "kick_get_channel_rewards" },
+    { "name": "kick_create_channel_reward", "description": "kick_create_channel_reward" },
+    { "name": "kick_update_channel_reward", "description": "kick_update_channel_reward" },
+    { "name": "kick_delete_channel_reward", "description": "kick_delete_channel_reward" },
+    { "name": "kick_get_channel_reward_redemptions", "description": "kick_get_channel_reward_redemptions" },
+    { "name": "kick_accept_channel_reward_redemption", "description": "kick_accept_channel_reward_redemption" },
+    { "name": "kick_reject_channel_reward_redemption", "description": "kick_reject_channel_reward_redemption" },
+    { "name": "kick_get_users", "description": "kick_get_users" }
+  ]
+}

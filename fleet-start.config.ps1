@@ -1,4 +1,4 @@
-﻿# Per-repo fleet start config for kick-mcp
+# Per-repo fleet start config for kick-mcp
 # Edit ports/backend target here - start.ps1 is fleet-standard.
 @{
     Name         = 'kick-mcp'
@@ -11,6 +11,7 @@
         Module     = 'kick_mcp'
         ServeArgs  = @('--http', '--port', '10968')
         SyncExtras = @('dev')
+        SyncOnStart  = $true
     }
     Frontend = @{
         Kind           = 'vite-npm'
